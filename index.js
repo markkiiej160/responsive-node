@@ -10,8 +10,8 @@ app.set('views', __dirname + '/public/views');
 app.set('view engine', 'jade');
 
 //Let less know where the files are
-app.use(lessMiddleware(__dirname + '/public/style'));
-app.use(express.static(__dirname + '/public/style'));
+app.use(lessMiddleware(__dirname + '/public/'));
+app.use(express.static(__dirname + '/public/'));
 
 //Server listen to specified port
 var server = app.listen(3000, function() {

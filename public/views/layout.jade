@@ -1,11 +1,19 @@
+mixin ie(condition)
+    |<!--[!{condition}]>
+    block
+    |<![endif]-->
+
 doctype html
 html
-	head
-		title Responsive
-		link(rel="stylesheet", href="style.css")
-	body
-		include header
-		main
-			div(class="main-container")
-				block content
-		include footer
+    head
+        title Responsive
+        link(rel="stylesheet", href="/style/style.css")
+        +ie('if lt IE 9')
+            script(src="/javascript/html5shiv.min.js")
+    body
+        include header
+        include nav
+        main
+            div(id="main-container")
+                block content
+        include footer
